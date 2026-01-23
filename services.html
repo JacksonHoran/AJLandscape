@@ -62,18 +62,57 @@
           <h1 class="h1">Complete landscape solutions.</h1>
           <p class="lead">One team from concept to completion—adapted to your goals, timeline, and budget.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="contact.html"><span class="dot"></span> Get an estimate</a>
+            <a class="btn primary" href="contact.html"></span> Get an estimate</a>
             <a class="btn" href="#process">Our process ↓</a>
           </div>
         </div>
-        <div class="hero-media" data-reveal>
-          <img src="assets/images/hero-2.jpg" alt="Services hero image" />
-          <div class="hero-badge"><span class="chip">Design</span><span class="small">Build • Maintain</span></div>
+        <div class="hero-media" data-reveal style="position: relative; height: 400px; overflow: hidden;">
+          <img class="carousel-image" src="assets/images/mn_proj_3.JPG" alt="Services hero image" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 0.5s ease-in-out;" />
+          <img class="carousel-image" src="assets/images/farrel_backyard.jpg" alt="Project 1" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease-in-out;" />
+          <img class="carousel-image" src="assets/images/pruple_flower.JPG" alt="Project 2" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease-in-out;" />
+          <img class="carousel-image" src="assets/images/striped_4.JPG" alt="Project 2" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease-in-out;" />
+          <!-- <img class="carousel-image" src="assets/images/pruple_flower.JPG" alt="Project 2" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease-in-out;" /> -->
+          <!-- <img class="carousel-image" src="assets/images/pruple_flower.JPG" alt="Project 2" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease-in-out;" /> -->
+
+          <button class="iconbtn" type="button" id="carousel-prev" aria-label="Previous" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); z-index: 10;">‹</button>
+          <button class="iconbtn" type="button" id="carousel-next" aria-label="Next" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); z-index: 10;">›</button>
         </div>
+        <script>
+          let currentIndex = 0;
+          const images = document.querySelectorAll('.carousel-image');
+          let autoplayInterval;
+
+          function showImage(index) {
+            images.forEach((img, i) => {
+              img.style.opacity = i === index ? '1' : '0';
+            });
+          }
+
+          function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+            resetAutoplay();
+          }
+
+          function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+            resetAutoplay();
+          }
+
+          function resetAutoplay() {
+            clearInterval(autoplayInterval);
+            autoplayInterval = setInterval(nextImage, 4000);
+          }
+
+          document.getElementById('carousel-next').addEventListener('click', nextImage);
+          document.getElementById('carousel-prev').addEventListener('click', prevImage);
+          autoplayInterval = setInterval(nextImage, 4000);
+        </script>
       </div>
     </section>
 
-    <section class="section">
+    <!-- <section class="section">
       <div class="container grid-3" data-stagger>
         <article class="feature">
           <div class="icon">1</div>
@@ -91,32 +130,55 @@
           <p>Seasonal care, pruning, and cleanups tailored to your landscape’s needs.</p>
         </article>
       </div>
-    </section>
+    </section> -->
 
     <section class="section alt">
       <div class="container">
         <div class="section-head">
           <div class="copy" data-reveal>
-            <div class="kicker">Build services</div>
-            <h2 class="h2">Popular project types.</h2>
-            <p>Swap these tiles and icons to match your offerings.</p>
+            <!-- <div class="kicker">Build services</div> -->
+            <h2 class="h2">Comercial Services</h2>
+            <!-- <p>Contract based</p> -->
           </div>
         </div>
 
         <div class="grid-4" data-stagger>
-          <div class="feature"><div class="icon">◼</div><h3>Walkways</h3><p>Stone, pavers, steps.</p></div>
-          <div class="feature"><div class="icon">◼</div><h3>Walls & Edging</h3><p>Retaining and garden walls.</p></div>
-          <div class="feature"><div class="icon">◼</div><h3>Patios</h3><p>Dining + lounge areas.</p></div>
-          <div class="feature"><div class="icon">◼</div><h3>Lighting</h3><p>Safety + ambiance.</p></div>
-          <div class="feature"><div class="icon">◼</div><h3>Drainage</h3><p>Stormwater solutions.</p></div>
-          <div class="feature"><div class="icon">◼</div><h3>Plant Install</h3><p>Trees, shrubs, perennials.</p></div>
-          <div class="feature"><div class="icon">◼</div><h3>Outdoor Kitchens</h3><p>Grill + prep zones.</p></div>
-          <div class="feature"><div class="icon">◼</div><h3>Structures</h3><p>Pergolas, screens.</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Maintenance</h3><p>Weeding, Fertilization, Mowing, Pruning.</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Turf and Plant Care</h3><p>Aeration, Dethatching, Soil Testing</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Seasonal Enhancements</h3><p>Mulch, Edging, cleanups</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Lighting</h3><p>Safety and ambiance.</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Hardscape Installation</h3><p>Walkways, Patios, Landings.</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Softscape Installation</h3><p>Flower Gardens, Mulch Beds, Sod.</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Water Management</h3><p>Burried Gutters, French Drains, Storm Drains.</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Snow and Ice Management</h3><p>Salting and PLowing</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="process">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="copy" data-reveal>
+            <!-- <div class="kicker">Build services</div> -->
+            <h2 class="h2">Residential Services</h2>
+            <!-- <p>Contract based</p> -->
+          </div>
+        </div>
+
+        <div class="grid-4" data-stagger>
+          <div class="feature" style="background-color: #b9c8a8;"><div class="icon" style="background-color: #fffbf1;">◼</div><h3>Maintenance</h3><p>Weeding, Fertilization, Mowing, Pruning.</p></div>
+          <div class="feature" style="background-color: #b9c8a8;"><div class="icon" style="background-color: #fffbf1;">◼</div><h3>Turf and Plant Care</h3><p>Aeration, Dethatching, Soil Testing</p></div>
+          <div class="feature" style="background-color: #b9c8a8;"><div class="icon" style="background-color: #fffbf1;">◼</div><h3>Seasonal Enhancements</h3><p>Mulch, Edging, cleanups</p></div>
+          <div class="feature" style="background-color: #b9c8a8;"><div class="icon" style="background-color: #fffbf1;">◼</div><h3>Lighting</h3><p>Safety and ambiance.</p></div>
+          <!-- <div class="feature"><div class="icon">◼</div><h3>Hardscape Installation</h3><p>Walkways, Patios, Landings.</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Softscape Installation</h3><p>Flower Gardens, Mulch Beds, Sod.</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Water Management</h3><p>Burried Gutters, French Drains, Storm Drains.</p></div>
+          <div class="feature"><div class="icon">◼</div><h3>Snow and Ice Management</h3><p>Salting and PLowing</p></div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section" id="process">
       <div class="container">
         <div class="section-head">
           <div class="copy" data-reveal>
@@ -139,7 +201,7 @@
           <p>List your towns/cities here (kept as a single clean paragraph, like the reference site’s “Who we serve” block). :contentReference[oaicite:3]{index=3}</p>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <!-- Hiring band + Footer (paste) -->
@@ -147,17 +209,18 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div>
-      <div class="brand" style="color:white;">
-        <span class="mark" style="background:var(--brand-2)"></span>
-        <span>YOUR LANDSCAPING CO.</span>
-      </div>
-      <p class="muted" style="margin-top:10px;">
-        Full-service landscape design, build, and seasonal horticultural care.
+      <img src="assets/images/grey_transparent.png" alt="Your Landscaping Co. Logo" height="100" />
+      <p class="muted">
+        Comercial and residential outdoor contractors.
       </p>
-      <div class="muted" style="margin-top:14px; display:grid; gap:6px;">
-        <div>info@yourdomain.com</div>
-        <div>123 Main Street • Your Town, ST 00000</div>
-        <div>(555) 555-5555</div>
+      <div class="muted" style="margin-top:18px; display:grid; gap:6px;">
+        <div>jackson.ajlandscapes@gmail.com</div>
+        <div>anton.ajlandscapes@gmail.com</div>
+
+        <div style="margin-top:14px;">
+        Minneapolis, MN 55411</div>
+        <div>(508) 380-5789</div>
+        <div>(763) 464-2018</div>
       </div>
     </div>
 
@@ -167,7 +230,6 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
         <a href="our-story.html">Our Story</a>
-        <a href="careers.html">Careers</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
@@ -177,18 +239,17 @@
       <p class="muted" style="margin-top:10px;">Monthly updates, seasonal tips, and project highlights.</p>
       <form class="inputrow" onsubmit="event.preventDefault(); alert('Wire this to Netlify Forms/Mailchimp later');">
         <input class="input" type="email" placeholder="Email address" required />
-        <button class="btn primary" type="submit"><span class="dot"></span> Subscribe</button>
+        <button class="btn primary" type="submit"></span> Subscribe</button>
       </form>
     </div>
   </div>
 
-  <div class="container footer-bottom">
-    <div class="muted">© <span id="year"></span> Your Landscaping Co. All rights reserved.</div>
+  <!-- <div class="container footer-bottom">
     <div style="display:flex; gap:14px;">
       <a class="muted" href="#" aria-label="Instagram">Instagram</a>
       <a class="muted" href="#" aria-label="Facebook">Facebook</a>
     </div>
-  </div>
+  </div> -->
   </footer>
 
   <script>
