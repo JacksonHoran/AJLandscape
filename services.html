@@ -190,7 +190,7 @@
     <div>
       <div class="kicker" style="color:rgba(255,255,255,.7)">Newsletter</div>
       <p class="muted" style="margin-top:10px;">Monthly updates, seasonal tips, and project highlights.</p>
-      <form class="inputrow" onsubmit="event.preventDefault(); alert('Wire this to Netlify Forms/Mailchimp later');">
+      <form class="inputrow" name="newsletter" method="POST" data-netlify="true" id="contactForm">
         <input class="input" type="email" placeholder="Email address" required />
         <button class="btn primary" type="submit"></span> Subscribe</button>
       </form>
