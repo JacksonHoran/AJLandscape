@@ -111,7 +111,7 @@
           <div class="kicker">Contact form</div>
           <h2 class="h2" style="margin-top:8px;">Schedule a consultation</h2>
 
-          <form class="form" style="margin-top:16px;" name="contact" method="POST" data-netlify="true" id="contactForm">
+          <form class="form" style="margin-top:16px;" name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true" id="contactForm">
             <div class="field">
               <label for="name">Name</label>
               <input class="input" id="name" name="name" placeholder="First + Last" required />
@@ -132,6 +132,7 @@
               <label for="message">Tell us about your project</label>
               <textarea class="input" id="message" name="message" placeholder="Scope, timeline, inspiration, budget range…"></textarea>
             </div>
+            <div data-netlify-recaptcha="true"></div>
             <button class="btn primary" type="submit"> Send message</button>
           </form>
         </div>
